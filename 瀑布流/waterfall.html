@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 520px;
+            margin: 20px auto;
+            background-color: aliceblue;
+            position: relative;
+        }
+        .item {
+            position: absolute;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            animation: fade-in;/*动画名称*/
+            animation-duration: 1.5s;/*动画持续时间*/
+            -webkit-animation:fade-in 1.5s;/*针对webkit内核*/
+        }
+        .wrap img {
+            width: 250px;
+        }
+        @keyframes fade-in {
+            0% {opacity: 0;}/*初始状态 透明度为0*/
+            40% {opacity: 0;}/*过渡状态 透明度为0*/
+            100% {opacity: 1;}/*结束状态 透明度为1*/
+        }
+        @-webkit-keyframes fade-in {/*针对webkit内核*/
+            0% {opacity: 0;}
+            40% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        #wrapper {
+            animation: fade-in;/*动画名称*/
+            animation-duration: 1.5s;/*动画持续时间*/
+            -webkit-animation:fade-in 1.5s;/*针对webkit内核*/
+        }
+    </style>
+    <script src="../assets/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+    </div>
+    <script>
+        var array = [
+            './1.jpeg',
+            './2.jpeg',
+            './3.jpeg',
+            './4.jpeg',
+            './5.jpeg'
+        ];
+        var html = '';
+        for (var k = 0;k< array.length;k++) {
+            html += "<div class='item'>" +
+                        "<img src='" + array[k] + "'>" +
+                     "</div>";
+        };
+
+        $('.wrap').html(html);
+
+
+        //console.log(col);
+        function waterfall() {
+            var width = $('.item').outerWidth(true);
+            var col = Math.round($('.wrap').width() / width);
+            var sumHeight = [];
+            for (var i = 0; i< col; i++) {
+                sumHeight[i] = 0;
+            }
+            $('.item').each(function () {
+                var idx = 0,
+                    minHeight = sumHeight[0];
+                for (var j = 0; j < col; j++) {
+                    if (minHeight > sumHeight[j]) {
+                        minHeight = sumHeight[j];
+                        idx = j;
+                        break;
+                    }
+                }
+
+                $(this).css({
+                    left: width * idx,
+                    top: minHeight
+                });
+
+                sumHeight[idx] = minHeight + $(this).outerHeight(true);
+
+            });
+        }
+        $(window).load(function () {
+            waterfall();
+            window.onscroll = function () {
+                console.log($(window).scrollTop());
+                if ($(document).scrollTop() + $(window).height()>= $(document).height() - 200) {
+                    var a = [
+                        './6.jpeg',
+                        './7.jpeg',
+                        './8.jpeg'
+                    ];
+                    var html = '';
+                    for (var i = 0; i < a.length; i++) {
+                        html += "<div class='item'>" +
+                            "<img src='" + a[i] + "'>" +
+                            "</div>";
+                    }
+                    $('.wrap').append(html);
+                    waterfall();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
