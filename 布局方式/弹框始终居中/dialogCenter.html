@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mask {
+            background-color: #000;
+            opacity: 0.5;
+            width: 100%;
+            height:100%;
+            display: block;
+            z-index: 1000;
+            overflow: hidden;
+            top:0;
+            left:0;
+            position: fixed;
+        }
+        .dialog {
+            display: none;
+        }
+        .dialog-box {
+            position: fixed;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            z-index: 1020;
+            text-align: center;
+
+        }
+        /*.dialog-box:after {
+            content: '';
+            display: inline-block;
+            height:100%;
+            width: 0;
+            vertical-align: middle;
+        }*/
+        .dialog-body {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <div class="btn">打开</div>
+    <div class="dialog">
+        <div class="mask"></div>
+        <div class="dialog-box">
+            <div class="dialog-body">
+                <div class="dialog-header">head</div>
+                <div class="dialog-content">
+                    contentcccccc
+                </div>
+                <div class="dialog-foot">
+                    foot
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.btn').addEventListener('click',()=>{
+            document.querySelector('.dialog').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
