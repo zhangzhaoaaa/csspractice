@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #nav {
+            width: 100%;
+            height:60px;
+            background-color: #d57eeb;
+            color: #000;
+            line-height: 60px;
+            text-align: center;
+            list-style: none;
+        }
+        #nav li {
+            float: left;
+            width: 20%;
+            height: 60px;
+        }
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>我就是在这里看你</h1>
+        <p>遥远的地方在那里</p>
+        <ul id="nav">
+            <li>购物车</li>
+            <li>收藏</li>
+            <li>立即购买</li>
+        </ul>
+        <div class="content">
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+            <p>123</p>
+        </div>
+    </div>
+    <script>
+        var nav = document.getElementById('nav');
+
+        var navTop = nav.offsetTop;
+
+        window.addEventListener('scroll', ()=>{
+            var top = window.scrollY;
+            if (top > navTop) {
+                nav.className = "clearfix fixed";
+            } else {
+                nav.className = "clearfix";
+            }
+        });
+    </script>
+</body>
+</html>
