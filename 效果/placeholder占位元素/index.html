@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        @keyframes dot-a {
+            8% {
+                transform: translateY(0);
+            }
+            22% {
+                transform: translateY(-0.3125rem);
+            }
+            36% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes dot-b {
+            36% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-0.4375rem);
+            }
+            64% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes dot-c {
+            64% {
+                transform: translateY(0);
+            }
+            78% {
+                transform: translateY(-0.3125rem);
+            }
+            92% {
+                transform: translateY(0);
+            }
+        }
+        .holder-container {
+            position: relative;
+            width: 20rem;
+            height: 9.5rem;
+            background: #fafafa;
+            border-radius: 0.125rem;
+            border: 0.0625rem solid #acacac;
+            margin: 0 auto;
+        }
+        .media,.media:before,.media:after,.head,.head:before,.head:after,.text,.text:before,.text:after {
+            position: absolute;
+            background: #c9c9c9;
+        }
+        .media {
+            top: 0.5rem;
+            left: 0.5rem;
+            width: 4rem;
+            height: 4rem;
+        }
+        .media:before,.media:after {
+            top: 2rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 1rem;
+            background: #7a7a7a;
+            content: '';
+        }
+        .media:before {
+            left: 0.75rem;
+            animation: dot-a 1.8s ease infinite;
+        }
+        .media:after {
+            left: 1.75rem;
+            animation: dot-b 1.8s ease infinite;
+
+        }
+        .head {
+            top: 1.125rem;
+            left: 5rem;
+            width: calc(100% - 5.5rem);
+        }
+        .head, .head:before {
+            height: 0.875rem;
+        }
+        .head:after, .head:before {
+            content: '';
+        }
+        .head:before {
+            top: 1.5rem;
+            width: 85%;
+        }
+        .head:after {
+            top: 1.375rem;
+            left: -1.75rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 1rem;
+            background: #7a7a7a;
+            animation: dot-c 1.8s ease infinite;
+        }
+        .text {
+            top: 5.25rem;
+            left: 0.5rem;
+            width: calc(85% - 1rem);
+        }
+        .text, .text:before, .text:after {
+            height: 0.75rem;
+        }
+        .text:before, .text:after {
+            content: '';
+        }
+        .text:before {
+            top: 1.25rem;
+            width: calc(120% - 1rem);
+        }
+        .text:after {
+            top: 2.5rem;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+<div class="holder-container">
+    <div class="media"></div>
+    <div class="head"></div>
+    <div class="text"></div>
+</div>
+</body>
+</html>
