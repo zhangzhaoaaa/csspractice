@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .rotate {
+            transform: rotate(-180deg);
+            transition: 0.4s ease-in-out;
+            transform-origin: 50% 44%;
+        }
+        .wrap {
+            transition: 0.4s ease-in-out;
+            display: inline-block;
+        }
+    </style>
+    <script src="../../assets/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<div class="content">
+		<span id="div">
+			<span class="wrap">
+				<span class="a"> ^ </span>
+			</span>
+		</span>
+</div>
+<script>
+    $(function () {
+        $('#div').click(function () {
+            if ($('.wrap').hasClass('rotate')) {
+                $('.wrap').removeClass('rotate');
+            } else {
+                $('.wrap').addClass('rotate');
+            }
+        });
+    });
+</script>
+</body>
+</html>
